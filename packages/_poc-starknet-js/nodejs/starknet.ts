@@ -1,3 +1,15 @@
+export const createPrivateKey = () => {
+  return "";
+};
+
 export const createAccount = () => {
-  return 5;
+  return "";
+};
+
+export const createSignature = () => {
+  return "";
+};
+
+export const createTransaction = () => {
+  return "";
 };
