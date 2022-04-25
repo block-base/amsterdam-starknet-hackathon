@@ -1,17 +1,35 @@
-import { createPrivateKey, createAccount, createSignature, createTransaction } from "./starknet";
+import {
+  createKeyPair,
+  createAccount,
+  createSignature,
+  createSendETHTransferTransaction,
+  getTransactionHistory,
+  getPublicStarkKeyFromKeyPair,
+} from "./starknet";
 
-test("createPrivateKey", () => {
-  expect(createPrivateKey()).toBe("");
+test("createKeyPair", async () => {
+  expect(await createKeyPair()).not.toBeNull();
 });
 
-test("createAccount", () => {
-  expect(createAccount()).toBe("");
+test("getPublicStarkKeyFromKeyPair", async () => {
+  const keyPair = createKeyPair();
+  expect(await getPublicStarkKeyFromKeyPair(keyPair)).not.toBeNull();
 });
 
-test("createSignature", () => {
-  expect(createSignature()).toBe("");
+test("createAccount", async () => {
+  const { address, txHash } = await createAccount();
+  expect(address).not.toBeNull();
+  expect(txHash).not.toBeNull();
 });
 
-test("createTransaction", () => {
-  expect(createTransaction()).toBe("");
+test("createSignature", async () => {
+  expect(await createSignature()).toBe("");
+});
+
+test("createSendETHTransferTransaction", async () => {
+  expect(await createSendETHTransferTransaction()).toBe("");
+});
+
+test("getTransactionHistory", async () => {
+  expect(await getTransactionHistory()).toBe("");
 });
