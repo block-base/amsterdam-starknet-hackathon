@@ -1,0 +1,13 @@
+{
+  "name": "amsterdam-starknet-hackathon",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "description": "This is repo for Amsterdam StarkNet Hackathon",
+  "private": true,
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

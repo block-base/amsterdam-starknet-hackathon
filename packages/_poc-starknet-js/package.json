@@ -1,0 +1,9 @@
+{
+  "name": "poc-starknet-js",
+  "version": "1.0.0",
+  "dependencies": {
+    "@argent/get-starknet": "^3.2.1",
+    "@starknet-react/core": "^0.7.2",
+    "starknet": "^3.9.0"
+  }
+}
