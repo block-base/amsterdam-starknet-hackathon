@@ -1,55 +1,43 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Hello, Snaps!</title>
-    <link rel="icon" type="image/svg" href="./images/icon.svg"/>
+    <link rel="icon" type="image/svg" href="./images/icon.svg" />
+    <style>
+      .container {
+        padding: 20px;
+      }
+    </style>
   </head>
 
   <body>
-    <h1>Hello, Snaps!</h1>
-    <details>
-      <summary>Instructions</summary>
-      <ul>
-        <li>First, click "Connect". Then, try out the other buttons!</li>
-        <li>Please note that:</li>
-        <ul>
-          <li>
-            The <code>snap.manifest.json</code> and <code>package.json</code> must be located in the server root directory..
-          </li>
-          <li>
-            The Snap bundle must be hosted at the location specified by the <code>location</code> field of <code>snap.manifest.json</code>.
-          </li>
-        </ul>
-      </ul>
-    </details>
-    <br/>
-
-    <button class="connect">Connect</button>
-    <button class="sendHello">Send Hello</button>
-    <button class="getAddress">Get Address</button>
-    <button class="getStarkKet">Get StarkKey</button>
-    <button class="getBalance">Get Balance</button>
-    <button class="getPriKey">Get Private Key</button>
+    <div class="container">
+      <h2>StarkMask</h2>
+      <h3>StarkMask is Metamask Adapter for StarkNet. It Brings All EVM User to StarkNet!!</h3>
+      <h4>Connect to StarkMask</h4>
+      <button class="connect">Connect</button>
+      <p id="starkKey"></p>
+      <h4>Create Account</h4>
+      <button class="createAccount">Create</button>
+      <p id="account"></p>
+      <h4>Mint 100 Test Token</h4>
+      <button class="mint">Not Yet</button>
+      <h4>Transfer Test Token</h4>
+      <button class="transfer">Not Yet</button>
+    </div>
   </body>
 
   <script src="./functions.js"></script>
   <script>
-      
     const snapId = `local:${window.location.href}`;
 
-    const connectButton = document.querySelector('button.connect')
-    const sendButton = document.querySelector('button.sendHello')
-    const getAddressButton = document.querySelector('button.getAddress')
-    const getStarkKeyButton = document.querySelector('button.getStarkKet')
-    const getBalanceButton = document.querySelector('button.getBalance')
-    const getPriKeyButton = document.querySelector('button.getPriKey')
-
-    connectButton.addEventListener('click', connect)
-    sendButton.addEventListener('click', send)
-    getAddressButton.addEventListener('click', getAddress)
-    getStarkKeyButton.addEventListener('click', getStarkKey)
-    getBalanceButton.addEventListener('click', getBalance)
-    getPriKeyButton.addEventListener('click', getPriKey)
-
+    const connectButton = document.querySelector("button.connect");
+    const createAccountButton = document.querySelector("button.createAccount");
+    const mintButton = document.querySelector("button.mint");
+    const transferButton = document.querySelector("button.transfer");
+    connectButton.addEventListener("click", connect);
+    createAccountButton.addEventListener("click", createAccount);
+    mintButton.addEventListener("click", mint);
+    transferButton.addEventListener("click", transfer);
   </script>
 </html>

@@ -3,7 +3,7 @@
   "proposedName": "StarkMask",
   "description": "StarkNet Metamask Adapter",
   "source": {
-    "shasum": "4a+bRXETZb2sDaOzyxrMGR5652LYcjO9ZWvgk2avY1Y=",
+    "shasum": "6H0gw7bp662GeAzq36nSfLtxM0TXzFzqp6H9QHXnW8g=",
     "location": {
       "npm": {
         "filePath": "dist/bundle.js",
@@ -16,7 +16,7 @@
   "initialPermissions": {
     "endowment:network-access": {},
     "snap_confirm": {},
-    "snap_getBip44Entropy_1": {},
+    "snap_getBip44Entropy_9004": {},
     "snap_manageState": {}
   },
   "manifestVersion": "0.1"

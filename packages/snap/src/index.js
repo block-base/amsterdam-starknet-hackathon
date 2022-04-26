@@ -1,32 +1,19 @@
-import {getAddress} from "../rpc/getAddress"
-import {getBalance} from "../rpc/getBalance"
-import {getStarkKey} from "../rpc/getStarkKey"
-import {getPriKey} from "../rpc/getPriKey"
+import { getAddress } from "../rpc/getAddress";
+import { getStarkKey } from "../rpc/getStarkKey";
+import { getPrivateKey } from "../rpc/getPrivateKey";
+import { createAccount } from "../rpc/createAccount";
 
-wallet.registerRpcMessageHandler(async (originString, requestObject) => {
+wallet.registerRpcMessageHandler(async (_originString, requestObject) => {
   switch (requestObject.method) {
-    case 'hello':
-      return wallet.request({
-        method: 'snap_confirm',
-        params: [
-          {
-            prompt: `Hello, ${originString}!`,
-            description:
-              'This custom confirmation is just for display purposes.',
-            textAreaContent:
-              'But you can edit the snap source code to make it do something, if you want to!',
-          },
-        ],
-      });
-    case 'get_wallet_address':
-      return await getAddress();
-    case 'get_stark_key':
+    case "get_private_key":
+      return await getPrivateKey();
+    case "get_stark_key":
       return await getStarkKey();
-    case 'get_balance':
-      return await getBalance();
-    case 'get_private_key':
-      return await getPriKey();
+    case "create_account":
+      return await createAccount();
+    case "get_address":
+      return await getAddress();
     default:
-      throw new Error('Method not found.');
+      throw new Error("Method not found.");
   }
 });
