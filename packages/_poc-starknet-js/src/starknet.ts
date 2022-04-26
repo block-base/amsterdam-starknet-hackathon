@@ -8,6 +8,7 @@ export const createKeyPair = () => {
 };
 
 export const getStarkKey = (keyPair: EC.KeyPair) => {
+  console.log(starknet.ec.getStarkKey(keyPair));
   return starknet.ec.getStarkKey(keyPair);
 };
 
@@ -27,6 +28,7 @@ export const createAccount = async (
     addressSalt: starkKey,
   });
   const accountAddress = address as string;
+  console.log(accountAddress);
   const accountContract = new starknet.Contract(compiledArgentAccount.abi, accountAddress);
   const { transaction_hash: initializeTxHash } = await accountContract.initialize(starkKey, "0");
   return {
@@ -36,13 +38,13 @@ export const createAccount = async (
   };
 };
 
-export const deployERC20 = async (keyPair: EC.KeyPair) => {
-  const starkKey = getStarkKey(keyPair);
+export const deployERC20 = async () => {
   const compiledERC20 = starknet.json.parse(fs.readFileSync(path.join(__dirname, "./ERC20.json")).toString("ascii"));
   const { transaction_hash: deployERC20TxHash, address } = await starknet.defaultProvider.deployContract({
     contract: compiledERC20,
   });
   const erc20Address = address as string;
+  console.log(erc20Address);
   return { deployERC20TxHash, erc20Address };
 };
 
