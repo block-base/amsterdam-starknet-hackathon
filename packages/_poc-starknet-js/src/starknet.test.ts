@@ -19,17 +19,6 @@ test("createAccount", async () => {
   expect(accountAddress).not.toBeNull();
 });
 
-test("getAddress", async () => {
-  const address = getAddress();
-  expect(address).not.toBeNull();
-});
-
-test("getTransferLogs", async () => {
-  const address = getAddress();
-  const transferLogs = getTransferLogs(address);
-  expect(transferLogs).not.toBeNull();
-});
-
 test("deployERC20", async () => {
   const keyPair = createKeyPair();
   const { deployERC20TxHash, erc20Address } = await deployERC20(keyPair);
