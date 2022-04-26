@@ -1,9 +1,24 @@
 {
   "name": "poc-starknet-js",
   "version": "1.0.0",
+  "license": "UNLICENSED",
   "dependencies": {
     "@argent/get-starknet": "^3.2.1",
     "@starknet-react/core": "^0.7.2",
     "starknet": "^3.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/elliptic": "^6.4.14",
+    "@types/jest": "^27.4.1",
+    "babel-jest": "^28.0.0",
+    "jest": "^28.0.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }
