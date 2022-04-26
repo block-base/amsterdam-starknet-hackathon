@@ -1,0 +1,28 @@
+{
+  "version": "0.7.0",
+  "proposedName": "Otakurypto Yearrrr",
+  "description": "Why dont't you be an otaku.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MetaMask/snap-template.git"
+  },
+  "source": {
+    "shasum": "duKg42qUXL+a5gKdTFwaw+/ZXu42bWqwa3wV8JkIQ7o=",
+    "location": {
+      "npm": {
+        "filePath": "dist/bundle.js",
+        "iconPath": "images/icon.svg",
+        "packageName": "@metamask/template-snap",
+        "registry": "https://registry.npmjs.org/"
+      }
+    }
+  },
+  "initialPermissions": {
+    "endowment:network-access": {},
+    "snap_confirm": {},
+    "snap_getBip44Entropy_1": {},
+    "snap_getBip44Entropy_461": {},
+    "snap_manageState": {}
+  },
+  "manifestVersion": "0.1"
+}
